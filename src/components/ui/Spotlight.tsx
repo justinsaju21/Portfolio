@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface SpotlightProps {
@@ -10,49 +10,36 @@ interface SpotlightProps {
 }
 
 export function Spotlight({ className, children }: SpotlightProps) {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
 
-    useEffect(() => {
-        const handleMouseMove = (e: MouseEvent) => {
-            if (!containerRef.current) return;
-            const rect = containerRef.current.getBoundingClientRect();
-            setMousePosition({
-                x: e.clientX - rect.left,
-                y: e.clientY - rect.top,
-            });
-        };
+    function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+        const { left, top } = currentTarget.getBoundingClientRect();
+        mouseX.set(clientX - left);
+        mouseY.set(clientY - top);
+    }
 
-        const container = containerRef.current;
-        container?.addEventListener("mousemove", handleMouseMove);
-        return () => container?.removeEventListener("mousemove", handleMouseMove);
-    }, []);
+    const gradient1 = useMotionTemplate`radial-gradient(800px circle at ${mouseX}px ${mouseY}px, rgba(6, 182, 212, 0.12), transparent 40%)`;
+    const gradient2 = useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(59, 130, 246, 0.08), transparent 40%)`;
 
     return (
         <div
-            ref={containerRef}
-            className={cn("relative overflow-hidden", className)}
-            style={{
-                "--mouse-x": `${mousePosition.x}px`,
-                "--mouse-y": `${mousePosition.y}px`,
-            } as React.CSSProperties}
+            className={cn("relative overflow-hidden group", className)}
+            onMouseMove={handleMouseMove}
         >
             {/* Spotlight gradient */}
             <motion.div
-                className="pointer-events-none absolute inset-0 z-10"
+                className="pointer-events-none absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{
-                    background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(6, 182, 212, 0.12), transparent 40%)`,
+                    background: gradient1,
                 }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
             />
 
             {/* Secondary glow */}
             <motion.div
-                className="pointer-events-none absolute inset-0 z-10"
+                className="pointer-events-none absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{
-                    background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.08), transparent 40%)`,
+                    background: gradient2,
                 }}
             />
 

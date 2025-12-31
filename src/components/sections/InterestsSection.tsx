@@ -141,7 +141,8 @@ function InterestCard({ interest }: { interest: typeof interests[0] }) {
     return (
         <motion.div
             whileHover={{ scale: 1.02 }}
-            className="relative h-full group overflow-hidden rounded-2xl"
+            className="relative h-full group overflow-hidden rounded-2xl transform-gpu"
+            style={{ backfaceVisibility: "hidden" }}
         >
             {/* Background Image */}
             <div
