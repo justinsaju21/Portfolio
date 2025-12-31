@@ -110,7 +110,7 @@ export function ExperienceSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="text-center mb-16"
                 >
                     <span className="text-accent-cyan text-sm uppercase tracking-widest mb-4 block">
@@ -132,7 +132,7 @@ export function ExperienceSection() {
                             initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                            viewport={{ once: false, amount: 0.2 }}
                         >
                             <GlassmorphismCard className="p-8 h-full" glow>
                                 {/* Header */}

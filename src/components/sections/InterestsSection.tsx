@@ -92,7 +92,7 @@ export function InterestsSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        viewport={{ once: false, amount: 0.2 }}
                         className="text-accent-cyan text-sm uppercase tracking-widest mb-4 block"
                     >
                         Beyond Code
@@ -101,7 +101,7 @@ export function InterestsSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        viewport={{ once: false, amount: 0.2 }}
                         className="heading-lg text-foreground mb-4"
                     >
                         Interests & <span className="text-gradient-accent">Passions</span>
@@ -110,7 +110,7 @@ export function InterestsSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        viewport={{ once: false, amount: 0.2 }}
                         className="body-lg text-foreground-muted max-w-2xl mx-auto"
                     >
                         Life beyond technology — the things that inspire and energize me
@@ -125,7 +125,7 @@ export function InterestsSection() {
                             initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                            viewport={{ once: false, amount: 0.2 }}
                             className={interest.span}
                         >
                             <InterestCard interest={interest} />

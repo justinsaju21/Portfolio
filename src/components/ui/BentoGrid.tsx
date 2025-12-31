@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useRef } from "react";
 
 interface BentoGridProps {
     className?: string;
@@ -40,12 +41,15 @@ export function BentoGridItem({
     colSpan = 1,
     rowSpan = 1,
 }: BentoGridItemProps) {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false, amount: 0.1 });
+
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+            ref={ref}
+            initial={false}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.3, y: 5 }}
+            transition={{ type: "tween", duration: 0.4, ease: "easeOut" }}
             whileHover={{ scale: 1.02, y: -5 }}
             className={cn(
                 "group relative overflow-hidden rounded-2xl",

@@ -10,11 +10,16 @@ import { RevealText } from "@/components/ui/RevealText";
 
 export function HeroSection() {
     return (
-        <Spotlight className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+        <Spotlight className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-20 pb-10 md:py-0">
             {/* Background Effects */}
             <div className="absolute inset-0 bg-grid opacity-30" />
             <BackgroundBeams className="opacity-40" />
-            <FloatingParticles quantity={40} />
+            <div className="hidden md:block">
+                <FloatingParticles quantity={40} />
+            </div>
+            <div className="block md:hidden">
+                <FloatingParticles quantity={15} />
+            </div>
 
             {/* Radial gradient overlay */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,var(--background)_80%)]" />
@@ -86,9 +91,8 @@ export function HeroSection() {
                 {/* Bio */}
                 <motion.p
                     initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
                     className="body-lg text-foreground-muted max-w-2xl mx-auto mb-6"
                 >
                     Vibe-focused coder building at the intersection of hardware, software, and human well-being.
@@ -101,9 +105,8 @@ export function HeroSection() {
                     <motion.a
                         href="mailto:justinsaju21@gmail.com"
                         initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-midnight-light/40 border border-glass-border text-sm text-foreground-muted hover:text-accent-cyan hover:border-accent-cyan/50 transition-all"
                     >
                         <Mail className="w-4 h-4" />
@@ -113,7 +116,7 @@ export function HeroSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        viewport={{ once: true, amount: 0 }}
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-midnight-light/40 border border-glass-border text-sm text-foreground-muted"
                     >
                         <Phone className="w-4 h-4" />
@@ -125,9 +128,9 @@ export function HeroSection() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                    viewport={{ once: true, amount: 0 }}
                     transition={{ duration: 0.5, delay: 0.8 }}
-                    className="flex flex-wrap justify-center gap-4"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
                 >
                     <MagneticButton
                         href="#projects"

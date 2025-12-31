@@ -15,9 +15,11 @@
   --accent-pink: #ec4899;
 
   /* Neutral Colors */
-  --foreground: #f1f5f9;
-  --foreground-muted: #94a3b8;
-  --foreground-dim: #64748b;
+  --foreground: #ffffff;
+  --foreground-muted: #cbd5e1;
+  /* Slate 300 - Lighter */
+  --foreground-dim: #94a3b8;
+  /* Slate 400 - Lighter */
 
   /* Background */
   --background: #050a14;
@@ -60,6 +62,7 @@
 
 html {
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {

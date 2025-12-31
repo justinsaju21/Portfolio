@@ -137,7 +137,7 @@ export function TechStackSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        viewport={{ once: false, amount: 0.2 }}
                         className="text-accent-cyan text-sm uppercase tracking-widest mb-4 block"
                     >
                         Tech Stack
@@ -146,7 +146,7 @@ export function TechStackSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        viewport={{ once: false, amount: 0.2 }}
                         className="heading-lg text-foreground mb-4"
                     >
                         Skills & <span className="text-gradient-accent">Expertise</span>
@@ -155,7 +155,7 @@ export function TechStackSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        viewport={{ once: false, amount: 0.2 }}
                         className="body-lg text-foreground-muted max-w-2xl mx-auto"
                     >
                         A diverse toolkit spanning software, hardware, and research methodologies
@@ -164,7 +164,7 @@ export function TechStackSection() {
                         initial={{ opacity: 0, scaleX: 0 }}
                         whileInView={{ opacity: 1, scaleX: 1 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        viewport={{ once: false, amount: 0.2 }}
                         className="w-24 h-1 bg-gradient-to-r from-accent-blue to-accent-purple mx-auto rounded-full mt-6"
                     />
                 </div>
@@ -177,7 +177,7 @@ export function TechStackSection() {
                             initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                            viewport={{ once: false, amount: 0.2 }}
                             className={skill.colSpan === 2 ? "md:col-span-2" : ""}
                         >
                             <BentoGridItem
@@ -196,7 +196,7 @@ export function TechStackSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="mt-12 flex flex-wrap justify-center gap-3"
                 >
                     {["TensorFlow", "PyTorch", "Arduino", "ESP32", "Raspberry Pi", "MATLAB", "AutoCAD", "Git", "Linux", "IoT", "PCB Design"].map((tag, i) => (

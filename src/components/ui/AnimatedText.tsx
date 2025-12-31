@@ -29,7 +29,7 @@ export function AnimatedText({
     const child = {
         hidden: {
             opacity: 0,
-            y: 20,
+            y: 10,
         },
         visible: {
             opacity: 1,
@@ -48,7 +48,7 @@ export function AnimatedText({
             variants={container}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+            viewport={{ once: false, amount: 0.2 }}
         >
             {elements.map((element, index) => (
                 <motion.span

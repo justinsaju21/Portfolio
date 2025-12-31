@@ -42,12 +42,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground cursor-none`}
+        suppressHydrationWarning
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground cursor-none relative`}
       >
         <ScrollProgress />
         <CustomCursor />
         <Navbar />
-        <main>{children}</main>
+        <main className="relative">{children}</main>
         <Footer />
         <ScrollToTop />
       </body>

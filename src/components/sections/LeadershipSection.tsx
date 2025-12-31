@@ -135,7 +135,7 @@ export function LeadershipSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="text-center mb-16"
                 >
                     <span className="text-accent-cyan text-sm uppercase tracking-widest mb-4 block">
@@ -154,7 +154,7 @@ export function LeadershipSection() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
                 >
                     {impacts.map((impact, index) => (
@@ -163,7 +163,7 @@ export function LeadershipSection() {
                             initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
-                            viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                            viewport={{ once: false, amount: 0.2 }}
                             whileHover={{ y: -5, scale: 1.02 }}
                         >
                             <GlassmorphismCard className="p-6 text-center h-full">
@@ -175,7 +175,7 @@ export function LeadershipSection() {
                                     initial={{ opacity: 0 }}
                                     whileInView={{ opacity: 1 }}
                                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                                    viewport={{ once: false, amount: 0.2 }}
                                 >
                                     {impact.value}
                                 </motion.div>
@@ -193,7 +193,7 @@ export function LeadershipSection() {
                             initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.2 }}
-                            viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                            viewport={{ once: false, amount: 0.2 }}
                         >
                             <GlassmorphismCard className="p-8 h-full" glow>
                                 <div className="flex items-start gap-4 mb-6">
@@ -219,7 +219,7 @@ export function LeadershipSection() {
                                                 initial={{ opacity: 0, x: -10 }}
                                                 whileInView={{ opacity: 1, x: 0 }}
                                                 transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
-                                                viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                                                viewport={{ once: false, amount: 0.2 }}
                                                 className="flex items-center gap-2 text-sm text-foreground-muted"
                                             >
                                                 <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${role.gradient}`} />
@@ -238,7 +238,7 @@ export function LeadershipSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                    viewport={{ once: false, amount: 0.2 }}
                 >
                     <h3 className="heading-sm text-foreground mb-6 text-center flex items-center justify-center gap-2">
                         <Trophy className="w-5 h-5 text-yellow-400" />
@@ -251,7 +251,7 @@ export function LeadershipSection() {
                                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ delay: index * 0.1 }}
-                                viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                                viewport={{ once: false, amount: 0.2 }}
                             >
                                 <GlassmorphismCard className="p-5 text-center">
                                     <p className={`text-xl font-bold ${hackathon.color} mb-1`}>{hackathon.result}</p>

@@ -294,7 +294,7 @@ export function ProjectsSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="text-center mb-12"
                 >
                     <span className="text-accent-cyan text-sm uppercase tracking-widest mb-4 block">
@@ -308,7 +308,7 @@ export function ProjectsSection() {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        viewport={{ once: false, amount: 0.2 }}
                     >
                         {projects.length} projects spanning Virtual Labs, Embedded Systems, Web Apps, and Academic Research
                     </motion.p>
@@ -319,7 +319,7 @@ export function ProjectsSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="flex flex-wrap justify-center gap-3 mb-12"
                 >
                     {categories.map((category) => (
@@ -356,7 +356,7 @@ export function ProjectsSection() {
                                 key={project.id}
                                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50, y: 50 }}
                                 whileInView={{ opacity: 1, x: 0, y: 0 }}
-                                viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                                viewport={{ once: false, amount: 0.2 }}
                                 transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
                             >
                                 <ProjectCard project={project} />
@@ -370,7 +370,7 @@ export function ProjectsSection() {
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        viewport={{ once: false, amount: 0.2 }}
                         className="text-center mt-8"
                     >
                         <motion.button
@@ -397,7 +397,7 @@ export function ProjectsSection() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="text-center mt-12"
                 >
                     <motion.a

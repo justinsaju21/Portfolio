@@ -83,7 +83,7 @@ export function ContactSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="text-center mb-16"
                 >
                     <span className="text-accent-cyan text-sm uppercase tracking-widest mb-4 block">
@@ -103,7 +103,7 @@ export function ContactSection() {
                         initial={{ opacity: 0, x: -100 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        viewport={{ once: false, amount: 0.2 }}
                     >
                         <GlassmorphismCard className="p-8" glow>
                             <form onSubmit={handleSubmit} className="space-y-6">
@@ -206,7 +206,7 @@ export function ContactSection() {
                         initial={{ opacity: 0, x: 100 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        viewport={{ once: false, amount: 0.2 }}
                         className="space-y-8"
                     >
                         {/* Info Cards */}
@@ -253,7 +253,7 @@ export function ContactSection() {
                                         initial={{ opacity: 0, y: 10 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ delay: index * 0.1, duration: 0.5 }}
-                                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                                        viewport={{ once: false, amount: 0.2 }}
                                         whileHover={{ scale: 1.02 }}
                                         className={cn(
                                             "flex items-center gap-3 p-4 rounded-xl",

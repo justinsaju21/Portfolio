@@ -252,7 +252,7 @@ export function WritingSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="text-center mb-16"
                 >
                     <span className="text-accent-cyan text-sm uppercase tracking-widest mb-4 block">
@@ -273,7 +273,7 @@ export function WritingSection() {
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5 }}
-                            viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                            viewport={{ once: false, amount: 0.2 }}
                             id="medium-articles"
                             className="heading-sm text-foreground flex items-center gap-2"
                         >
@@ -290,7 +290,7 @@ export function WritingSection() {
                                     key={article.title}
                                     initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                                     whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                                    viewport={{ once: false, amount: 0.2 }}
                                     transition={{ duration: 0.5, delay: (index % 2) * 0.1 }}
                                 >
                                     <a
@@ -360,13 +360,13 @@ export function WritingSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                    viewport={{ once: false, amount: 0.2 }}
                 >
                     <motion.h3
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        viewport={{ once: false, amount: 0.2 }}
                         id="certifications"
                         className="heading-sm text-foreground mb-6 flex items-center gap-2"
                     >
@@ -380,7 +380,7 @@ export function WritingSection() {
                                     key={cert.title}
                                     initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                                     whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                                    viewport={{ once: false, amount: 0.2 }}
                                     transition={{ duration: 0.4, delay: (index % 5) * 0.05 }}
                                     layout
                                 >

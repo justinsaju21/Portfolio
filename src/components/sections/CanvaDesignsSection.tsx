@@ -158,7 +158,7 @@ export function CanvaDesignsSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="text-center mb-16"
                 >
                     <span className="text-accent-purple text-sm uppercase tracking-widest mb-4 block">
@@ -172,7 +172,7 @@ export function CanvaDesignsSection() {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        viewport={{ once: false, amount: 0.2 }}
                     >
                         {designs.length} creative designs for presentations, posters, and visual content
                     </motion.p>
@@ -191,7 +191,7 @@ export function CanvaDesignsSection() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
-                                viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                                viewport={{ once: false, amount: 0.2 }}
                                 whileHover={{ scale: 1.02, y: -5 }}
                                 whileTap={{ scale: 0.98 }}
                                 className="group"
@@ -228,7 +228,7 @@ export function CanvaDesignsSection() {
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        viewport={{ once: false, amount: 0.2 }}
                         className="text-center"
                     >
                         <motion.button
@@ -255,7 +255,7 @@ export function CanvaDesignsSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="text-center mt-8"
                 >
                     <p className="text-sm text-foreground-dim">
