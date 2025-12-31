@@ -14,36 +14,32 @@ export function CustomCursor() {
     const cursorYSpring = useSpring(cursorY, springConfig);
 
     useEffect(() => {
+        // Optimization: Check for touch device to avoid running logic unnecessarily
+        const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+        if (isTouchDevice) return;
+
         const moveCursor = (e: MouseEvent) => {
-            // Direct update without requestAnimationFrame for lowest latency
             cursorX.set(e.clientX - 16);
             cursorY.set(e.clientY - 16);
         };
 
-        const handleMouseEnter = () => setIsHovered(true);
-        const handleMouseLeave = () => setIsHovered(false);
+        const handleMouseOver = (e: MouseEvent) => {
+            const target = e.target as HTMLElement;
+            // Check if the target or its parent is interactive
+            const isInteractive = target.matches("a, button, input, textarea, [role='button']") ||
+                target.closest("a, button, input, textarea, [role='button']");
 
-        // Add event listeners for all clickable elements
-        const addHoverListeners = () => {
-            const elements = document.querySelectorAll("a, button, input, textarea, [role='button']");
-            elements.forEach((el) => {
-                el.addEventListener("mouseenter", handleMouseEnter);
-                el.addEventListener("mouseleave", handleMouseLeave);
-            });
+            setIsHovered(!!isInteractive);
         };
 
         window.addEventListener("mousemove", moveCursor);
-        addHoverListeners();
-
-        // Re-add listeners when DOM changes (simple observer)
-        const observer = new MutationObserver(addHoverListeners);
-        observer.observe(document.body, { childList: true, subtree: true });
+        window.addEventListener("mouseover", handleMouseOver);
 
         return () => {
             window.removeEventListener("mousemove", moveCursor);
-            observer.disconnect();
+            window.removeEventListener("mouseover", handleMouseOver);
         };
-    }, []);
+    }, [cursorX, cursorY]);
 
     return (
         <motion.div
