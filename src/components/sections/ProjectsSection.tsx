@@ -18,7 +18,7 @@ interface Project {
     instructables?: string;
     streamlit?: string;
     tinkercad?: string;
-    image?: string;
+    external?: string;
 }
 
 const projects: Project[] = [
@@ -46,7 +46,7 @@ const projects: Project[] = [
         description: "Award-winning project demonstrating Visible Light Communication (VLC). 1st Place at TECHKNOW 2023-24.",
         category: "embedded",
         tags: ["LiFi", "VLC", "Research", "Hardware"],
-        tinkercad: "https://www.canva.com/design/DAGz9JnPRWQ/uUnP_neB6SjSLBD8HjPErg/edit",
+        external: "https://www.canva.com/design/DAGz9JnPRWQ/uUnP_neB6SjSLBD8HjPErg/edit",
     },
     {
         id: "1",
@@ -430,6 +430,20 @@ function ProjectCard({ project }: { project: Project }) {
                                 title="View on Instructables"
                             >
                                 <Wrench className="w-5 h-5" />
+                            </motion.a>
+                        )}
+                        {/* External Link (Generic) */}
+                        {project.external && (
+                            <motion.a
+                                href={project.external}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                                className="p-2 rounded-lg bg-midnight/50 border border-glass-border text-foreground-muted hover:text-accent-purple hover:border-accent-purple/50 transition-all"
+                                title="View Documentation / Demo"
+                            >
+                                <ExternalLink className="w-5 h-5" />
                             </motion.a>
                         )}
                         {project.tinkercad && (

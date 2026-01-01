@@ -95,31 +95,39 @@ export function Navbar() {
                         {/* Logo */}
                         <motion.a
                             href="#"
-                            className="text-xl md:text-2xl font-bold text-gradient"
+                            className="text-xl md:text-2xl font-bold text-gradient font-mono tracking-tight"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            JJS
+                            &lt;Justin /&gt;
                         </motion.a>
 
                         {/* Desktop Navigation */}
                         <div className="hidden md:flex items-center gap-1">
-                            {navLinks.map((link) => (
-                                <motion.a
-                                    key={link.href}
-                                    href={link.href}
-                                    onClick={(e) => handleNavClick(e, link.href)}
-                                    className="relative px-4 py-2 text-sm text-foreground-muted hover:text-foreground transition-colors"
-                                    whileHover={{ y: -2 }}
-                                >
-                                    {link.label}
-                                    <motion.span
-                                        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-accent-cyan to-accent-blue"
-                                        whileHover={{ width: "80%" }}
-                                        transition={{ duration: 0.2 }}
-                                    />
-                                </motion.a>
-                            ))}
+                            {navLinks.map((link) => {
+                                const isActive = activeSection === link.href.substring(1);
+                                return (
+                                    <motion.a
+                                        key={link.href}
+                                        href={link.href}
+                                        onClick={(e) => handleNavClick(e, link.href)}
+                                        className={cn(
+                                            "relative px-4 py-2 text-sm transition-colors",
+                                            isActive ? "text-accent-cyan font-medium" : "text-foreground-muted hover:text-foreground"
+                                        )}
+                                        whileHover={{ y: -2 }}
+                                    >
+                                        {link.label}
+                                        <motion.span
+                                            className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-gradient-to-r from-accent-cyan to-accent-blue"
+                                            initial={{ width: "0%" }}
+                                            animate={{ width: isActive ? "80%" : "0%" }}
+                                            whileHover={{ width: "80%" }}
+                                            transition={{ duration: 0.2 }}
+                                        />
+                                    </motion.a>
+                                );
+                            })}
                         </div>
 
                         {/* CTA Button */}

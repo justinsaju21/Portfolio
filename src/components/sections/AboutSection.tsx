@@ -74,15 +74,15 @@ export function AboutSection() {
                     <div className="w-24 h-1 bg-gradient-to-r from-accent-cyan to-accent-blue mx-auto rounded-full" />
                 </motion.div>
 
-                {/* Main Content */}
-                <div className="grid lg:grid-cols-2 gap-12 items-start">
-                    {/* Left Column: Dense Info */}
+                {/* Main Content Split: Bio & Profile */}
+                <div className="grid lg:grid-cols-2 gap-12 mb-16">
+                    {/* Left Column: Bio & Core Info */}
                     <motion.div
                         initial={{ opacity: 0, y: 24 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                         viewport={{ once: false, amount: 0.2 }}
-                        className="space-y-6"
+                        className="space-y-6 flex flex-col"
                     >
                         <GlassmorphismCard className="p-8">
                             <h3 className="heading-md text-foreground mb-4">
@@ -109,36 +109,33 @@ export function AboutSection() {
                             </div>
                         </GlassmorphismCard>
 
-                        {/* Education Highlights - Condensed */}
-                        <GlassmorphismCard className="p-6 flex items-center justify-between">
-                            <div>
-                                <h4 className="text-sm font-semibold text-accent-cyan uppercase tracking-wider mb-1">
-                                    🎓 Academic Excellence
-                                </h4>
-                                <p className="text-sm text-foreground-muted">Electronics & Communication</p>
-                                <p className="text-xs text-foreground-dim">SRM Institute of Science and Technology</p>
-                            </div>
-                            <div className="text-right pl-4 border-l border-glass-border">
-                                <span className="text-3xl font-bold text-gradient">9.71</span>
-                                <p className="text-[10px] text-foreground-muted uppercase tracking-tighter">Current CGPA</p>
+                        {/* Education Highlight */}
+                        <GlassmorphismCard className="p-6">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <h4 className="text-sm font-semibold text-accent-cyan uppercase tracking-wider mb-1">
+                                        🎓 Academic Excellence
+                                    </h4>
+                                    <p className="text-sm text-foreground-muted">Electronics & Communication</p>
+                                    <p className="text-xs text-foreground-dim">SRM Institute of Science and Technology</p>
+                                </div>
+                                <div className="text-right pl-4 border-l border-glass-border">
+                                    <span className="text-3xl font-bold text-gradient">9.71</span>
+                                    <p className="text-[10px] text-foreground-muted uppercase tracking-tighter">Current CGPA</p>
+                                </div>
                             </div>
                         </GlassmorphismCard>
 
-                        {/* Quick Stats Grid - Moved to Left Column for Balance */}
+                        {/* Quick Stats Grid */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.4 }}
-                            viewport={{ once: false, amount: 0.2 }}
-                            className="grid grid-cols-2 gap-4"
+                            className="grid grid-cols-2 gap-4 flex-1"
                         >
-                            {/* VLSI Box - Tech/Circuit Theme */}
-                            <GlassmorphismCard className="p-5 flex flex-col justify-between overflow-hidden relative group hover:border-accent-purple/40 transition-colors">
+                            {/* VLSI Box */}
+                            <GlassmorphismCard className="p-5 flex flex-col justify-between overflow-hidden relative group hover:border-accent-purple/40 transition-colors h-full">
                                 <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500"
                                     style={{ backgroundImage: "radial-gradient(#a855f7 1px, transparent 1px)", backgroundSize: "12px 12px" }}
                                 />
                                 <div className="absolute -right-4 -top-4 w-20 h-20 bg-accent-purple/10 rounded-full blur-2xl group-hover:bg-accent-purple/20 transition-all duration-500" />
-
                                 <div className="p-2.5 w-fit rounded-lg bg-accent-purple/10 border border-accent-purple/20 mb-3 group-hover:scale-110 transition-transform duration-300">
                                     <Shield className="w-5 h-5 text-accent-purple" />
                                 </div>
@@ -149,11 +146,10 @@ export function AboutSection() {
                                 </div>
                             </GlassmorphismCard>
 
-                            {/* Thermal Box - Heat/Gradient Theme */}
-                            <GlassmorphismCard className="p-5 flex flex-col justify-between overflow-hidden relative group hover:border-orange-500/40 transition-colors">
+                            {/* Thermal Box */}
+                            <GlassmorphismCard className="p-5 flex flex-col justify-between overflow-hidden relative group hover:border-orange-500/40 transition-colors h-full">
                                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 bg-gradient-to-t from-orange-500 via-transparent to-transparent" />
                                 <div className="absolute -left-4 -bottom-4 w-20 h-20 bg-orange-500/10 rounded-full blur-2xl group-hover:bg-orange-500/20 transition-all duration-500" />
-
                                 <div className="p-2.5 w-fit rounded-lg bg-orange-500/10 border border-orange-500/20 mb-3 group-hover:scale-110 transition-transform duration-300">
                                     <Thermometer className="w-5 h-5 text-orange-500" />
                                 </div>
@@ -166,16 +162,16 @@ export function AboutSection() {
                         </motion.div>
                     </motion.div>
 
-                    {/* Right Column: Visuals & Highlights */}
-                    <div className="space-y-6">
-                        {/* Profile Visual Area */}
+                    {/* Right Column: Profile Visual */}
+                    <div className="h-full">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                             viewport={{ once: false, amount: 0.2 }}
+                            className="h-full"
                         >
-                            <GlassmorphismCard className="relative overflow-hidden p-0 group">
+                            <GlassmorphismCard className="relative overflow-hidden p-0 group h-full flex flex-col justify-center">
                                 {/* Background & Effects */}
                                 <div className="absolute inset-0 bg-gradient-to-b from-accent-cyan/5 via-midnight to-accent-blue/5" />
                                 <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:32px_32px] opacity-20" />
@@ -226,32 +222,30 @@ export function AboutSection() {
                                 </div>
                             </GlassmorphismCard>
                         </motion.div>
-
-                        {/* Highlights Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            {highlights.map((item, index) => (
-                                <motion.div
-                                    key={item.title}
-                                    initial={{ opacity: 0, y: 24 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-                                    viewport={{ once: false, amount: 0.2 }}
-                                >
-                                    <GlassmorphismCard className="p-6 h-full hover:border-accent-cyan/50 transition-colors group">
-                                        <div className="flex flex-col h-full">
-                                            <div className="p-3 rounded-xl bg-gradient-to-br from-accent-cyan/20 to-accent-blue/20 w-fit mb-4 group-hover:scale-110 transition-transform">
-                                                <item.icon className="w-6 h-6 text-accent-cyan" />
-                                            </div>
-                                            <h4 className="heading-sm text-foreground mb-2">{item.title}</h4>
-                                            <p className="text-sm text-foreground-muted leading-relaxed">{item.description}</p>
-                                        </div>
-                                    </GlassmorphismCard>
-                                </motion.div>
-                            ))}
-                        </div>
-
-
                     </div>
+                </div>
+
+                {/* Highlights Grid - Full Width Bottom Row */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {highlights.map((item, index) => (
+                        <motion.div
+                            key={item.title}
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+                            viewport={{ once: false, amount: 0.2 }}
+                        >
+                            <GlassmorphismCard className="p-6 h-full hover:border-accent-cyan/50 transition-colors group">
+                                <div className="flex flex-col h-full">
+                                    <div className="p-3 rounded-xl bg-gradient-to-br from-accent-cyan/20 to-accent-blue/20 w-fit mb-4 group-hover:scale-110 transition-transform">
+                                        <item.icon className="w-6 h-6 text-accent-cyan" />
+                                    </div>
+                                    <h4 className="heading-sm text-foreground mb-2">{item.title}</h4>
+                                    <p className="text-sm text-foreground-muted leading-relaxed">{item.description}</p>
+                                </div>
+                            </GlassmorphismCard>
+                        </motion.div>
+                    ))}
                 </div>
 
                 {/* Skills Tags */}
