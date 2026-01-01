@@ -107,9 +107,9 @@ export function ExperienceSection() {
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                     viewport={{ once: false, amount: 0.2 }}
                     className="text-center mb-16"
                 >
@@ -129,19 +129,15 @@ export function ExperienceSection() {
                     {experiences.map((exp, index) => (
                         <motion.div
                             key={exp.title}
-                            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                             viewport={{ once: false, amount: 0.2 }}
                         >
                             <GlassmorphismCard className="p-8 h-full" glow>
                                 {/* Header */}
-                                <motion.div
+                                <div
                                     className="flex items-start gap-4 mb-6"
-                                    initial={{ opacity: 0, y: 10 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: 0.1 }}
-                                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
                                 >
                                     <div className={`p-4 rounded-xl bg-gradient-to-br ${exp.gradient} shrink-0`}>
                                         <exp.icon className="w-8 h-8 text-white" />
@@ -167,26 +163,18 @@ export function ExperienceSection() {
                                         </div>
                                         <p className="text-xs text-foreground-muted mt-1">{exp.subtitle}</p>
                                     </div>
-                                </motion.div>
+                                </div>
 
                                 {/* Description */}
-                                <motion.p
+                                <p
                                     className="text-foreground-muted mb-6"
-                                    initial={{ opacity: 0, y: 10 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: 0.2 }}
-                                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
                                 >
                                     {exp.description}
-                                </motion.p>
+                                </p>
 
                                 {/* Skills */}
-                                <motion.div
+                                <div
                                     className="flex flex-wrap gap-2 mb-6"
-                                    initial={{ opacity: 0, y: 10 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: 0.3 }}
-                                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
                                 >
                                     {exp.skills.map((skill) => (
                                         <span
@@ -196,7 +184,7 @@ export function ExperienceSection() {
                                             {skill}
                                         </span>
                                     ))}
-                                </motion.div>
+                                </div>
 
                                 {/* Highlights */}
                                 <div className="space-y-2">
@@ -205,17 +193,13 @@ export function ExperienceSection() {
                                     </h4>
                                     <ul className="space-y-2">
                                         {exp.highlights.map((highlight, i) => (
-                                            <motion.li
+                                            <li
                                                 key={i}
-                                                initial={{ opacity: 0, x: -10 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
-                                                transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
-                                                viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
                                                 className="flex items-start gap-2 text-sm text-foreground-muted"
                                             >
                                                 <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${exp.gradient} mt-1.5 shrink-0`} />
                                                 {highlight}
-                                            </motion.li>
+                                            </li>
                                         ))}
                                     </ul>
                                 </div>
@@ -240,33 +224,25 @@ export function ExperienceSection() {
 
                 {/* Connection Section */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                    transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                    viewport={{ once: false, amount: 0.2 }}
                 >
                     <GlassmorphismCard className="p-8">
                         <h3 className="heading-sm text-foreground mb-2 text-center">
                             🔗 Connecting the Dots
                         </h3>
-                        <motion.p
+                        <p
                             className="text-center text-foreground-muted mb-8 max-w-2xl mx-auto"
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ duration: 0.5, delay: 0.1 }}
-                            viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
                         >
                             How data science and thermal engineering converge in modern technology
-                        </motion.p>
+                        </p>
 
                         <div className="grid md:grid-cols-3 gap-6">
                             {connectionPoints.map((point, index) => (
-                                <motion.div
+                                <div
                                     key={point.title}
-                                    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: index * 0.1 }}
-                                    viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
                                     className="text-center p-4 rounded-xl bg-midnight/30 border border-glass-border"
                                 >
                                     <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-accent-cyan/20 to-accent-purple/20 mb-4">
@@ -274,16 +250,12 @@ export function ExperienceSection() {
                                     </div>
                                     <h4 className="font-medium text-foreground mb-2">{point.title}</h4>
                                     <p className="text-sm text-foreground-muted">{point.description}</p>
-                                </motion.div>
+                                </div>
                             ))}
                         </div>
 
                         {/* Quote */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ delay: 0.5 }}
-                            viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                        <div
                             className="mt-8 p-6 rounded-xl bg-gradient-to-r from-accent-cyan/10 via-accent-purple/10 to-accent-blue/10 border border-glass-border text-center"
                         >
                             <p className="text-foreground italic">
@@ -291,10 +263,10 @@ export function ExperienceSection() {
                                 from predicting component failures to optimizing data center efficiency.&quot;
                             </p>
                             <p className="text-sm text-accent-cyan mt-2">— My Vision</p>
-                        </motion.div>
+                        </div>
                     </GlassmorphismCard>
                 </motion.div>
             </div>
-        </section>
+        </section >
     );
 }

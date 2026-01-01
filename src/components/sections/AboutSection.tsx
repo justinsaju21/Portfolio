@@ -69,9 +69,9 @@ export function AboutSection() {
                 {/* Section Header */}
                 {/* Section Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                     viewport={{ once: false, amount: 0.2 }}
                     className="text-center mb-16"
                 >
@@ -88,9 +88,9 @@ export function AboutSection() {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Text Content */}
                     <motion.div
-                        initial={{ opacity: 0, x: -100 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5 }}
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                         viewport={{ once: false, amount: 0.2 }}
                         className="space-y-6"
                     >
@@ -103,7 +103,7 @@ export function AboutSection() {
                                     initial={{ opacity: 0, y: 10 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.1 }}
-                                    viewport={{ once: false, amount: 0 }}
+                                    viewport={{ once: false, amount: 0.2 }}
                                 >
                                     I&apos;m <span className="text-accent-cyan font-semibold">Justin Jacob Saju</span>,
                                     a vibe-focused coder and developer building at the intersection of
@@ -113,7 +113,7 @@ export function AboutSection() {
                                     initial={{ opacity: 0, y: 10 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.2 }}
-                                    viewport={{ once: false, amount: 0 }}
+                                    viewport={{ once: false, amount: 0.2 }}
                                 >
                                     Currently pursuing <span className="text-foreground">B.Tech in Electronics & Communication
                                         Engineering</span> with <span className="text-accent-blue">Data Science specialization</span> at
@@ -123,7 +123,7 @@ export function AboutSection() {
                                     initial={{ opacity: 0, y: 10 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.3 }}
-                                    viewport={{ once: false, amount: 0 }}
+                                    viewport={{ once: false, amount: 0.2 }}
                                 >
                                     As the <span className="text-accent-blue font-semibold">IEEE Student Chapter Chair</span>,
                                     I lead initiatives that bridge academic learning and real-world applications.
@@ -206,9 +206,9 @@ export function AboutSection() {
                         {highlights.map((item, index) => (
                             <motion.div
                                 key={item.title}
-                                initial={{ opacity: 0, x: 100 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                                 viewport={{ once: false, amount: 0.2 }}
                             >
                                 <GlassmorphismCard className="p-6 h-full">
@@ -227,9 +227,9 @@ export function AboutSection() {
 
                 {/* Skills Tags */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
+                    transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
                     viewport={{ once: false, amount: 0.2 }}
                     className="mt-12"
                 >
@@ -238,7 +238,7 @@ export function AboutSection() {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.5 }}
-                        viewport={{ once: false, amount: 0 }}
+                        viewport={{ once: false, amount: 0.2 }}
                     >💬 Ask me about:</motion.p>
                     <div className="flex flex-wrap justify-center gap-3">
                         {["Electronics", "Telecommunications", "Streamlit", "AI-native IDEs", "Virtual Labs", "Embedded Systems"].map((skill) => (

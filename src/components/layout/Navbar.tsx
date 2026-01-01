@@ -18,33 +18,44 @@ const navLinks = [
 ];
 
 export function Navbar() {
-    const [isScrolled, setIsScrolled] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState("");
 
     useEffect(() => {
+        let ticking = false;
+        let lastScrollY = 0;
+
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            if (ticking) return;
 
-            // "What is under the crosshair?" logic for absolute precision
-            // We check the element at the center-top of the viewport (approx 30% down)
-            const checkPointY = window.innerHeight * 0.3;
-            // Scan through all sections to see which one overlaps the checkpoint
-            const sections = navLinks.map(link => link.href.substring(1));
+            ticking = true;
+            requestAnimationFrame(() => {
+                const currentScrollY = window.scrollY;
+                setScrolled(currentScrollY > 50);
 
-            for (const sectionId of sections) {
-                const element = document.getElementById(sectionId);
-                if (element) {
-                    const rect = element.getBoundingClientRect();
-                    // If the section covers the checkpoint
-                    if (rect.top <= checkPointY && rect.bottom >= checkPointY) {
-                        setActiveSection(sectionId);
-                        break;
+                // "What is under the crosshair?" logic for absolute precision
+                // We check the element at the center-top of the viewport (approx 30% down)
+                const checkPointY = window.innerHeight * 0.3;
+                // Scan through all sections to see which one overlaps the checkpoint
+                const sections = navLinks.map(link => link.href.substring(1));
+
+                for (const sectionId of sections) {
+                    const element = document.getElementById(sectionId);
+                    if (element) {
+                        const rect = element.getBoundingClientRect();
+                        // If the section covers the checkpoint
+                        if (rect.top <= checkPointY && rect.bottom >= checkPointY) {
+                            setActiveSection(sectionId);
+                            break;
+                        }
                     }
                 }
-            }
+
+                lastScrollY = currentScrollY;
+                ticking = false;
+            });
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
@@ -71,6 +82,7 @@ export function Navbar() {
                 initial={{ y: -100 }}
                 animate={{ y: isVisible ? 0 : -100 }}
                 transition={{ duration: 0.3 }}
+                style={{ willChange: "transform, backdrop-filter", backfaceVisibility: "hidden" }}
                 className={cn(
                     "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                     scrolled

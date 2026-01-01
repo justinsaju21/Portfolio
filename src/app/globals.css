@@ -389,3 +389,23 @@ body {
   font-size: 1rem;
   line-height: 1.6;
 }
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+
+/* GPU acceleration for animated elements */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Layout containment for sections */
+section {
+  contain: layout style;
+}
+
+/* Sticky elements optimization */
+.sticky-optimized {
+  will-change: transform, backdrop-filter;
+  backface-visibility: hidden;
+}

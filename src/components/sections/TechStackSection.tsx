@@ -134,27 +134,27 @@ export function TechStackSection() {
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <motion.span
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 24 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
+                        transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                         viewport={{ once: false, amount: 0.2 }}
                         className="text-accent-cyan text-sm uppercase tracking-widest mb-4 block"
                     >
                         Tech Stack
                     </motion.span>
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 24 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
+                        transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                         viewport={{ once: false, amount: 0.2 }}
                         className="heading-lg text-foreground mb-4"
                     >
                         Skills & <span className="text-gradient-accent">Expertise</span>
                     </motion.h2>
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 24 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
+                        transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
                         viewport={{ once: false, amount: 0.2 }}
                         className="body-lg text-foreground-muted max-w-2xl mx-auto"
                     >
@@ -174,9 +174,9 @@ export function TechStackSection() {
                     {skills.map((skill, index) => (
                         <motion.div
                             key={skill.title}
-                            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
                             viewport={{ once: false, amount: 0.2 }}
                             className={skill.colSpan === 2 ? "md:col-span-2" : ""}
                         >
@@ -193,7 +193,7 @@ export function TechStackSection() {
 
                 {/* Extra Skills Tags */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
                     viewport={{ once: false, amount: 0.2 }}
@@ -205,7 +205,7 @@ export function TechStackSection() {
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ delay: i * 0.05 }}
-                            viewport={{ once: false, amount: 0, margin: "100px 0px 0px 0px" }}
+                            viewport={{ once: false, amount: 0.2 }}
                             whileHover={{ scale: 1.05, y: -2 }}
                             className="px-4 py-2 rounded-full text-sm bg-midnight-light/60 border border-glass-border text-foreground-muted hover:border-accent-cyan/50 hover:text-accent-cyan transition-all cursor-default"
                         >

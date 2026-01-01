@@ -1,8 +1,7 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { useRef } from "react";
 
 interface GlassmorphismCardProps {
     className?: string;
@@ -17,21 +16,19 @@ export function GlassmorphismCard({
     hover = true,
     glow = false,
 }: GlassmorphismCardProps) {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, amount: 0.1 });
-
     return (
         <motion.div
-            ref={ref}
-            initial={false}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.3, y: 5 }}
-            transition={{ type: "tween", duration: 0.4, ease: "easeOut" }}
-            whileHover={hover ? { y: -5, scale: 1.01 } : {}}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ once: false, amount: 0.2 }}
+            whileHover={hover ? { y: -4, transition: { duration: 0.2 } } : undefined}
             className={cn(
                 "relative overflow-hidden rounded-2xl",
                 "bg-midnight/80 md:bg-midnight-light/40 backdrop-blur-xl",
                 "border border-glass-border text-gray-100",
-                hover && "transition-all duration-300 hover:border-accent-cyan/40 hover:text-white",
+                "transition-colors duration-300",
+                hover && "hover:border-accent-cyan/40 hover:text-white",
                 glow && "shadow-lg shadow-accent-cyan/10",
                 className
             )}
