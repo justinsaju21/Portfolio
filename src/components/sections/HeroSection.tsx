@@ -38,7 +38,7 @@ export function HeroSection() {
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-cyan"></span>
                     </span>
                     <span className="text-sm text-foreground-muted">
-                        ECE &apos;27 @ SRMIST | Available for opportunities
+                        ECE ’27 @ SRMIST | Hardware & Systems Engineer
                     </span>
                 </motion.div>
 
@@ -82,7 +82,7 @@ export function HeroSection() {
                             Electronics & Communication Engineer
                         </motion.span>
                         <motion.span variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="hidden sm:inline text-foreground-dim">•</motion.span>
-                        <motion.span variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }} viewport={{ once: false, amount: 0.3 }}>Data Science Enthusiast</motion.span>
+                        <motion.span variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }} viewport={{ once: false, amount: 0.3 }}>VLSI & Embedded Systems</motion.span>
                         <motion.span variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="hidden sm:inline text-foreground-dim">•</motion.span>
                         <motion.span variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }} viewport={{ once: false, amount: 0.3 }} className="text-accent-blue">IEEE Student Chapter Chair</motion.span>
                     </div>
@@ -95,8 +95,8 @@ export function HeroSection() {
                     transition={{ duration: 0.5, delay: 0.6 }}
                     className="body-lg text-foreground-muted max-w-2xl mx-auto mb-6"
                 >
-                    Vibe-focused coder building at the intersection of hardware, software, and human well-being.
-                    Creating Virtual Labs, Emotional AI tools, and business automation systems.
+                    Engineer bridging the gap between <span className="text-foreground">hardware architecture</span> and intelligent software.
+                    Specializing in <span className="text-accent-cyan">VLSI Design</span>, <span className="text-accent-blue">Embedded Systems</span>, <span className="text-accent-purple">5G Network Analysis (Wireshark)</span>, <span className="text-accent-green">Thermal Management</span>, and <span className="text-accent-pink">Data Science / AI‑driven optimization</span>.
                 </motion.p>
 
                 {/* Contact Info Pills */}

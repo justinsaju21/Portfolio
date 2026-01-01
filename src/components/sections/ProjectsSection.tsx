@@ -22,7 +22,32 @@ interface Project {
 }
 
 const projects: Project[] = [
-    // Virtual Labs
+    // VLSI & Hardware Priority
+    {
+        id: "19",
+        title: "Hybrid Approximate Multiplier",
+        description: "Verilog implementation of hybrid approximate multiplier for low-power computing applications. Optimized for area and power efficiency.",
+        category: "vlsi",
+        tags: ["Verilog", "VLSI", "Low Power", "Research"],
+        github: "https://github.com/justinsaju21/Hybrid_Approximate_Multiplier",
+    },
+    {
+        id: "20",
+        title: "Stick Diagram Painter",
+        description: "Tool for creating VLSI stick diagrams for circuit layout visualization. Assists in understanding physical design rules.",
+        category: "vlsi",
+        tags: ["Python", "VLSI", "Physical Design", "Visualization"],
+        github: "https://github.com/justinsaju21/stick-diagram-painter",
+        streamlit: "https://justinsaju21-stick-diagram-painter-1--home-uunyi2.streamlit.app/",
+    },
+    {
+        id: "26",
+        title: "LiFi Technology",
+        description: "Award-winning project demonstrating Visible Light Communication (VLC). 1st Place at TECHKNOW 2023-24.",
+        category: "embedded",
+        tags: ["LiFi", "VLC", "Research", "Hardware"],
+        tinkercad: "https://www.canva.com/design/DAGz9JnPRWQ/uUnP_neB6SjSLBD8HjPErg/edit",
+    },
     {
         id: "1",
         title: "CMOS Switch & Duality Visualizer",
@@ -32,6 +57,39 @@ const projects: Project[] = [
         github: "https://github.com/justinsaju21/CMOS-Switch-Translator-Duality-Conduction-Visualizer",
         streamlit: "https://justinsaju21-cmos-switch-translator-duality-conducti-app-akx8f0.streamlit.app/",
     },
+    // Embedded Systems Core
+    {
+        id: "7",
+        title: "5x5x5 LED Matrix Display",
+        description: "3D LED cube display with custom animations and patterns. Hardware project using Arduino/ESP.",
+        category: "embedded",
+        tags: ["C++", "Arduino", "LED Matrix", "Hardware"],
+        github: "https://github.com/justinsaju21/5x5x5_Led_Matrix_Display",
+    },
+    {
+        id: "9",
+        title: "MQ3 Alcohol Sensor Monitor",
+        description: "Alcohol detection system with real-time monitoring via Blynk cloud platform.",
+        category: "embedded",
+        tags: ["C++", "Sensors", "IoT", "Safety"],
+        github: "https://github.com/justinsaju21/MQ3_Alcohol_Sensor",
+    },
+    {
+        id: "27",
+        title: "Mechanical Moving Chessboard",
+        description: "Real-time remote play chessboard with moving mechanical parts. Designed in AutoCAD for cross-country gameplay.",
+        category: "embedded",
+        tags: ["AutoCAD", "IoT", "Mechanical", "Hardware"],
+    },
+    {
+        id: "13",
+        title: "MQ2 Gas Sensor",
+        description: "Gas leak detection system with alert functionality for safety applications.",
+        category: "embedded",
+        tags: ["C++", "Sensors", "Safety", "IoT"],
+        github: "https://github.com/justinsaju21/MQ2_Gas_Sensor",
+    },
+    // Virtual Labs (Software for Hardware)
     {
         id: "2",
         title: "LogicMap Pro",
@@ -51,15 +109,6 @@ const projects: Project[] = [
         streamlit: "https://justinsaju21-opamp-deep-dive-lab-app-hqjbjr.streamlit.app/",
     },
     {
-        id: "4",
-        title: "Digital Logic FSM Lab",
-        description: "Virtual lab for Finite State Machine design and simulation in digital logic courses.",
-        category: "virtual-labs",
-        tags: ["Python", "FSM", "Digital Design"],
-        github: "https://github.com/justinsaju21/digital-logic-fsm-lab",
-        streamlit: "https://digital-logic-fsm-lab-t9epgfzeucmn9ef4bndyqw.streamlit.app/",
-    },
-    {
         id: "5",
         title: "Interactive CPU Lab",
         description: "Hands-on CPU architecture simulation for Computer Organization and Architecture studies.",
@@ -68,24 +117,7 @@ const projects: Project[] = [
         github: "https://github.com/justinsaju21/interactive-cpu-lab",
         streamlit: "https://justinsaju21-interactive-cpu-lab-home-hqfnek.streamlit.app/",
     },
-    {
-        id: "6",
-        title: "Digital Logic Design Lab",
-        description: "Comprehensive digital logic design experiments and simulations for ECE students.",
-        category: "virtual-labs",
-        tags: ["Python", "Digital Logic", "Lab"],
-        github: "https://github.com/justinsaju21/Digital_Logic_Design_Lab",
-        streamlit: "https://justinsaju21-digital-logic-design-lab-main-gusuls.streamlit.app/",
-    },
-    // Embedded Systems
-    {
-        id: "7",
-        title: "5x5x5 LED Matrix Display",
-        description: "3D LED cube display with custom animations and patterns. Hardware project using Arduino/ESP.",
-        category: "embedded",
-        tags: ["C++", "Arduino", "LED Matrix", "Hardware"],
-        github: "https://github.com/justinsaju21/5x5x5_Led_Matrix_Display",
-    },
+    // Other Projects
     {
         id: "8",
         title: "Music Player Buzzer",
@@ -95,61 +127,13 @@ const projects: Project[] = [
         github: "https://github.com/justinsaju21/Music_Player_Buzzer",
     },
     {
-        id: "9",
-        title: "MQ3 Alcohol Sensor Monitor",
-        description: "Alcohol detection system with real-time monitoring via Blynk cloud platform.",
-        category: "embedded",
-        tags: ["C++", "Sensors", "IoT", "Safety"],
-        github: "https://github.com/justinsaju21/MQ3_Alcohol_Sensor",
-    },
-    {
         id: "10",
-        title: "DHT11 Temperature & Humidity Monitor",
+        title: "DHT11 Environment Monitor",
         description: "Environmental monitoring system displaying temperature and humidity data in real-time.",
         category: "embedded",
         tags: ["C++", "DHT11", "IoT", "Monitoring"],
         github: "https://github.com/justinsaju21/DHT11_TempHumid_Monitor",
     },
-    {
-        id: "11",
-        title: "Ultrasonic Distance Monitoring",
-        description: "Distance measurement system using ultrasonic sensors with cloud connectivity.",
-        category: "embedded",
-        tags: ["C++", "Ultrasonic", "IoT"],
-        github: "https://github.com/justinsaju21/Ultrasonic_Distance_Monitoring",
-    },
-    {
-        id: "12",
-        title: "Light Intensity Meter",
-        description: "Light intensity measurement device with real-time data visualization.",
-        category: "embedded",
-        tags: ["C++", "Sensors", "IoT"],
-        github: "https://github.com/justinsaju21/Light_Intensity_meter",
-    },
-    {
-        id: "13",
-        title: "MQ2 Gas Sensor",
-        description: "Gas leak detection system with alert functionality for safety applications.",
-        category: "embedded",
-        tags: ["C++", "Sensors", "Safety", "IoT"],
-        github: "https://github.com/justinsaju21/MQ2_Gas_Sensor",
-    },
-    {
-        id: "26",
-        title: "LiFi Technology",
-        description: "Award-winning project demonstrating Visible Light Communication (VLC). 1st Place at TECHKNOW 2023-24.",
-        category: "embedded",
-        tags: ["LiFi", "VLC", "Research", "Hardware"],
-        tinkercad: "https://www.canva.com/design/DAGz9JnPRWQ/uUnP_neB6SjSLBD8HjPErg/edit",
-    },
-    {
-        id: "27",
-        title: "Mechanical Moving Chessboard",
-        description: "Real-time remote play chessboard with moving mechanical parts. Designed in AutoCAD for cross-country gameplay.",
-        category: "embedded",
-        tags: ["AutoCAD", "IoT", "Mechanical", "Hardware"],
-    },
-    // Web Apps
     {
         id: "14",
         title: "Photobooth Mailer",
@@ -169,24 +153,6 @@ const projects: Project[] = [
         streamlit: "https://cardgame-gn3aenokejqqn9wsd7odfn.streamlit.app/",
     },
     {
-        id: "16",
-        title: "SRM CGPA Calculator",
-        description: "CGPA calculator specifically designed for SRM Institute students with accurate grading system.",
-        category: "web-apps",
-        tags: ["Python", "Streamlit", "Education"],
-        github: "https://github.com/justinsaju21/srm-cgpa-calculator",
-        streamlit: "https://srm-cgpa-calculator-justinsaju21-app-mfishi.streamlit.app/",
-    },
-    {
-        id: "17",
-        title: "Print Service App",
-        description: "Business web application for managing print orders with admin panel and UPI payment.",
-        category: "web-apps",
-        tags: ["Python", "Streamlit", "Business"],
-        github: "https://github.com/justinsaju21/print_service",
-        streamlit: "https://justinsaju21-print-service-app-afmcqi.streamlit.app/",
-    },
-    {
         id: "18",
         title: "Cake App",
         description: "Online cake ordering platform with custom cake builder and order management.",
@@ -194,24 +160,6 @@ const projects: Project[] = [
         tags: ["Python", "Streamlit", "E-commerce"],
         github: "https://github.com/justinsaju21/cake_app",
         streamlit: "https://cakeapp-rgfejhbe4wunz58scnz3fp.streamlit.app/",
-    },
-    // Academic
-    {
-        id: "19",
-        title: "Hybrid Approximate Multiplier",
-        description: "Verilog implementation of hybrid approximate multiplier for low-power computing applications.",
-        category: "vlsi",
-        tags: ["Verilog", "VLSI", "Low Power"],
-        github: "https://github.com/justinsaju21/Hybrid_Approximate_Multiplier",
-    },
-    {
-        id: "20",
-        title: "Stick Diagram Painter",
-        description: "Tool for creating VLSI stick diagrams for circuit layout visualization.",
-        category: "vlsi",
-        tags: ["Python", "VLSI", "Visualization"],
-        github: "https://github.com/justinsaju21/stick-diagram-painter",
-        streamlit: "https://justinsaju21-stick-diagram-painter-1--home-uunyi2.streamlit.app/",
     },
     // TinkerCAD Circuits
     {
@@ -223,14 +171,6 @@ const projects: Project[] = [
         tinkercad: "https://www.tinkercad.com/things/lQ8bzgYgQfN-4x4x4-led-matrix-display",
     },
     {
-        id: "22",
-        title: "BCD to 7-Segment Display",
-        description: "Digital logic circuit converting Binary Coded Decimal to 7-segment display output.",
-        category: "circuits",
-        tags: ["TinkerCAD", "Digital Logic", "7-Segment", "BCD"],
-        tinkercad: "https://www.tinkercad.com/things/gIJCy2BZfNV-bcd-to-7-segment-display",
-    },
-    {
         id: "23",
         title: "4-Bit Adder",
         description: "Full adder circuit implementation for 4-bit binary addition using logic gates.",
@@ -238,30 +178,14 @@ const projects: Project[] = [
         tags: ["TinkerCAD", "Digital Logic", "Adder", "Gates"],
         tinkercad: "https://www.tinkercad.com/things/aSvIQRK2Oic-4-bit-adder",
     },
-    {
-        id: "24",
-        title: "Up Counter using 21 LEDs",
-        description: "Binary up counter circuit with 21 LED visualization for counting sequences.",
-        category: "circuits",
-        tags: ["TinkerCAD", "Counter", "LEDs", "Digital"],
-        tinkercad: "https://www.tinkercad.com/things/iy1m4i7yIO6-up-counter-using-21-leds",
-    },
-    {
-        id: "25",
-        title: "Password Door Lock",
-        description: "Security system simulation with keypad input for password-protected door lock.",
-        category: "circuits",
-        tags: ["TinkerCAD", "Arduino", "Security", "Keypad"],
-        tinkercad: "https://www.tinkercad.com/things/2KPAczAwKD1-password-door-lock",
-    },
 ];
 
 const categories: { id: Category; label: string; count: number }[] = [
     { id: "all", label: "All Projects", count: projects.length },
-    { id: "vlsi", label: "VLSI", count: projects.filter(p => p.category === "vlsi").length },
-    { id: "virtual-labs", label: "Virtual Labs", count: projects.filter(p => p.category === "virtual-labs").length },
-    { id: "embedded", label: "Embedded Systems", count: projects.filter(p => p.category === "embedded").length },
-    { id: "circuits", label: "Circuit Designing", count: projects.filter(p => p.category === "circuits").length },
+    { id: "vlsi", label: "VLSI / Hybrid", count: projects.filter(p => p.category === "vlsi").length },
+    { id: "embedded", label: "Embedded", count: projects.filter(p => p.category === "embedded").length },
+    { id: "virtual-labs", label: "Simulations", count: projects.filter(p => p.category === "virtual-labs").length },
+    { id: "circuits", label: "Digital Circuits", count: projects.filter(p => p.category === "circuits").length },
     { id: "web-apps", label: "Web Apps", count: projects.filter(p => p.category === "web-apps").length },
 ];
 

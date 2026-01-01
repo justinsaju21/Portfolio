@@ -6,55 +6,16 @@ import {
     Cpu,
     Radio,
     Database,
-    FileText,
     Code,
     Zap,
-    Layers
+    Layers,
+    Thermometer,
+    Sparkles,
+    Waves
 } from "lucide-react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/BentoGrid";
 
 const skills = [
-    {
-        title: "Python",
-        description: "Primary programming language for data science, machine learning, and automation projects.",
-        icon: <Code className="w-6 h-6" />,
-        colSpan: 1,
-        header: (
-            <div className="flex items-center justify-center h-20">
-                <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="text-4xl"
-                >
-                    🐍
-                </motion.div>
-            </div>
-        ),
-    },
-    {
-        title: "AI & Machine Learning",
-        description: "Building intelligent systems with TensorFlow, PyTorch, and scikit-learn. Passionate about neural networks and deep learning.",
-        icon: <Brain className="w-6 h-6" />,
-        colSpan: 2,
-        header: (
-            <div className="flex items-center justify-center h-24 gap-4">
-                <motion.div
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="p-3 rounded-xl bg-accent-purple/20"
-                >
-                    <Brain className="w-8 h-8 text-accent-purple" />
-                </motion.div>
-                <motion.div
-                    animate={{ y: [0, -5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
-                    className="p-3 rounded-xl bg-accent-cyan/20"
-                >
-                    <Layers className="w-8 h-8 text-accent-cyan" />
-                </motion.div>
-            </div>
-        ),
-    },
     {
         title: "Embedded Systems",
         description: "Hardware-software integration with Arduino, ESP32, Raspberry Pi, and custom PCB design.",
@@ -78,8 +39,8 @@ const skills = [
         ),
     },
     {
-        title: "5G Technology",
-        description: "Understanding next-generation wireless communication, network slicing, and edge computing.",
+        title: "5G & Network Analysis",
+        description: "Next-gen wireless communication, network slicing, and packet analysis using Wireshark.",
         icon: <Radio className="w-6 h-6" />,
         colSpan: 1,
         header: (
@@ -93,32 +54,128 @@ const skills = [
                     >
                         <div className="w-full h-full border-2 border-accent-cyan/30 rounded-full" />
                     </motion.div>
-                    <motion.div
-                        className="absolute -inset-8"
-                        animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0, 0.3] }}
-                        transition={{ duration: 1.5, repeat: Infinity, delay: 0.3 }}
-                    >
-                        <div className="w-full h-full border border-accent-cyan/20 rounded-full" />
-                    </motion.div>
                 </motion.div>
             </div>
         ),
     },
     {
+        title: "VLSI Design & Testing",
+        description: "System-on-Chip (SoC) verification, Fault modeling, and Design for Testability (DFT).",
+        icon: <Layers className="w-6 h-6" />,
+        colSpan: 1,
+        header: (
+            <div className="flex items-center justify-center h-20">
+                <div className="flex -space-x-4">
+                    {[1, 2, 3].map((i) => (
+                        <motion.div
+                            key={i}
+                            animate={{
+                                y: [0, -10, 0],
+                                scale: [1, 1.1, 1]
+                            }}
+                            transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                delay: i * 0.3
+                            }}
+                            className="w-12 h-8 bg-accent-purple/20 border border-accent-purple/40 rounded-md backdrop-blur-sm flex items-center justify-center"
+                        >
+                            <div className="w-6 h-1 bg-accent-purple/50 rounded-full" />
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        ),
+    },
+    {
+        title: "Thermal Management",
+        description: "Optimizing heat dissipation using CFD simulations (ANSYS Icepak) for high-performance electronics.",
+        icon: <Thermometer className="w-6 h-6" />,
+        colSpan: 1,
+        header: (
+            <div className="flex items-center justify-center h-20">
+                <motion.div
+                    animate={{
+                        color: ["#38bdf8", "#fb923c", "#38bdf8"],
+                        scale: [1, 1.1, 1]
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                >
+                    <Thermometer className="w-12 h-12" />
+                </motion.div>
+            </div>
+        ),
+    },
+    {
+        title: "AI-Accelerated Engineering",
+        description: "Leveraging AI for rapid code generation, automated testbench creation, and optimizing complex engineering workflows (Vibe Coding).",
+        icon: <Sparkles className="w-6 h-6" />,
+        colSpan: 2,
+        header: (
+            <div className="flex items-center justify-center h-24 gap-6">
+                <motion.div
+                    animate={{
+                        rotate: [0, 10, -10, 0],
+                        scale: [1, 1.2, 1],
+                    }}
+                    transition={{ duration: 4, repeat: Infinity }}
+                    className="p-4 rounded-2xl bg-gradient-to-br from-accent-cyan/20 to-accent-purple/20"
+                >
+                    <Sparkles className="w-10 h-10 text-accent-cyan" />
+                </motion.div>
+                <div className="flex flex-col gap-2">
+                    {[1, 2, 3].map((i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ width: 0 }}
+                            animate={{ width: [0, 100, 100, 0] }}
+                            transition={{
+                                duration: 3,
+                                repeat: Infinity,
+                                delay: i * 0.5,
+                                times: [0, 0.4, 0.8, 1]
+                            }}
+                            className="h-1 bg-gradient-to-r from-accent-cyan to-transparent rounded-full"
+                        />
+                    ))}
+                </div>
+            </div>
+        ),
+    },
+    {
         title: "Data Science",
-        description: "Statistical analysis, data visualization, and insights extraction using Pandas, NumPy, and Matplotlib.",
+        description: "Insights extraction, statistical analysis, and predictive modeling using complex datasets.",
         icon: <Database className="w-6 h-6" />,
         colSpan: 1,
         header: (
             <div className="flex items-center justify-center h-20 gap-2">
-                {[0, 1, 2, 3, 4].map((i) => (
+                {[0, 1, 2, 3].map((i) => (
                     <motion.div
                         key={i}
-                        className="w-2 bg-gradient-to-t from-accent-cyan to-accent-blue rounded-full"
-                        animate={{ height: [20, 40, 20] }}
-                        transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
+                        className="w-2.5 bg-accent-blue rounded-full"
+                        animate={{ height: [15, 35, 15] }}
+                        transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.2 }}
                     />
                 ))}
+            </div>
+        ),
+    },
+    {
+        title: "Python",
+        description: "Primary backend language for automation, scripting, and large-scale data processing.",
+        icon: <Code className="w-6 h-6" />,
+        colSpan: 1,
+        header: (
+            <div className="flex items-center justify-center h-20">
+                <motion.div
+                    animate={{
+                        rotateY: [0, 180, 360],
+                    }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                    className="text-5xl"
+                >
+                    🐍
+                </motion.div>
             </div>
         ),
     },
@@ -140,7 +197,7 @@ export function TechStackSection() {
                         viewport={{ once: false, amount: 0.2 }}
                         className="text-accent-cyan text-sm uppercase tracking-widest mb-4 block"
                     >
-                        Tech Stack
+                        Expertise
                     </motion.span>
                     <motion.h2
                         initial={{ opacity: 0, y: 24 }}
@@ -149,7 +206,7 @@ export function TechStackSection() {
                         viewport={{ once: false, amount: 0.2 }}
                         className="heading-lg text-foreground mb-4"
                     >
-                        Skills & <span className="text-gradient-accent">Expertise</span>
+                        Core <span className="text-gradient-accent">Specializations</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 24 }}
@@ -158,7 +215,7 @@ export function TechStackSection() {
                         viewport={{ once: false, amount: 0.2 }}
                         className="body-lg text-foreground-muted max-w-2xl mx-auto"
                     >
-                        A diverse toolkit spanning software, hardware, and research methodologies
+                        Bridging telecommunications and electronics with modern engineering paradigms
                     </motion.p>
                     <motion.div
                         initial={{ opacity: 0, scaleX: 0 }}
@@ -185,13 +242,13 @@ export function TechStackSection() {
                                 description={skill.description}
                                 icon={skill.icon}
                                 header={skill.header}
-                                className="h-full"
+                                className="h-full border-glass-border/50 hover:border-accent-cyan/30 transition-all duration-500"
                             />
                         </motion.div>
                     ))}
                 </BentoGrid>
 
-                {/* Extra Skills Tags */}
+                {/* Extra Technical Tags */}
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -199,7 +256,11 @@ export function TechStackSection() {
                     viewport={{ once: false, amount: 0.2 }}
                     className="mt-12 flex flex-wrap justify-center gap-3"
                 >
-                    {["TensorFlow", "PyTorch", "Arduino", "ESP32", "Raspberry Pi", "MATLAB", "AutoCAD", "Git", "Linux", "IoT", "PCB Design"].map((tag, i) => (
+                    {[
+                        "SystemVerilog", "UVM", "Wireshark", "DFT Testing", "Fault Modeling", "SoC Verification",
+                        "ANSYS Icepak", "CFD", "Network Slicing", "Edge Computing", "IoT Protocols",
+                        "PCB Design", "Python (Data Science)", "Git", "FPGA"
+                    ].map((tag, i) => (
                         <motion.span
                             key={tag}
                             initial={{ opacity: 0, scale: 0.8 }}
