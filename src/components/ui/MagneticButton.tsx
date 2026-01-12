@@ -46,7 +46,7 @@ export function MagneticButton({
     };
 
     const baseStyles = cn(
-        "relative inline-flex items-center justify-center font-medium",
+        "cursor-target relative inline-flex items-center justify-center font-medium",
         "rounded-full transition-all duration-300",
         "focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-midnight",
         {

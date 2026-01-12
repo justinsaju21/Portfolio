@@ -14,6 +14,7 @@ import {
     Waves
 } from "lucide-react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/BentoGrid";
+import GlitchText from "@/components/ui/GlitchText";
 
 const skills = [
     {
@@ -206,7 +207,7 @@ export function TechStackSection() {
                         viewport={{ once: false, amount: 0.2 }}
                         className="heading-lg text-foreground mb-4"
                     >
-                        Core <span className="text-gradient-accent">Specializations</span>
+                        Core <GlitchText speed={0.8} enableOnHover={true} className="text-gradient-accent inline-block">Specializations</GlitchText>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 24 }}

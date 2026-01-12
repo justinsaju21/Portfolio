@@ -19,7 +19,7 @@ export function MovingBorder({
 }: MovingBorderProps) {
     return (
         <div
-            className={cn("relative p-[1px] overflow-hidden", containerClassName)}
+            className={cn("cursor-target relative p-[1px] overflow-hidden", containerClassName)}
             style={{ borderRadius }}
         >
             {/* Animated gradient border */}

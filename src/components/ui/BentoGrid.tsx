@@ -52,7 +52,7 @@ export function BentoGridItem({
             transition={{ type: "tween", duration: 0.4, ease: "easeOut" }}
             whileHover={{ scale: 1.02, y: -5 }}
             className={cn(
-                "group relative overflow-hidden rounded-2xl",
+                "cursor-target group relative overflow-hidden rounded-2xl",
                 "bg-midnight-light/50 border border-glass-border",
                 "p-6 flex flex-col",
                 "transition-all duration-300",

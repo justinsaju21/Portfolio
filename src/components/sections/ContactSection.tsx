@@ -6,6 +6,7 @@ import { Send, Mail, MapPin, Phone, Linkedin, Instagram, BookOpen, Wrench, Check
 import { GlassmorphismCard } from "@/components/ui/GlassmorphismCard";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { cn } from "@/lib/utils";
+import GlitchText from "@/components/ui/GlitchText";
 
 const socialLinks = [
     {
@@ -90,7 +91,7 @@ export function ContactSection() {
                         Contact
                     </span>
                     <h2 className="heading-lg text-foreground mb-4">
-                        Let&apos;s <span className="text-gradient">Connect</span>
+                        Let&apos;s <GlitchText speed={0.8} enableOnHover={true} className="text-gradient inline-block">Connect</GlitchText>
                     </h2>
                     <p className="body-lg text-foreground-muted max-w-2xl mx-auto">
                         Have a project in mind or want to collaborate? I&apos;d love to hear from you!

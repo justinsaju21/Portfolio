@@ -6,13 +6,17 @@ import { Spotlight } from "@/components/ui/Spotlight";
 import { BackgroundBeams } from "@/components/ui/BackgroundBeams";
 import { FloatingParticles } from "@/components/ui/FloatingParticles";
 import { MagneticButton } from "@/components/ui/MagneticButton";
-import { RevealText } from "@/components/ui/RevealText";
+import Aurora from "@/components/ui/Aurora";
+import DecryptedText from "@/components/ui/DecryptedText";
+import RotatingText from "@/components/ui/RotatingText";
+
 
 export function HeroSection() {
     return (
         <Spotlight className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-20 pb-10 md:py-0">
             {/* Background Effects */}
             <div className="absolute inset-0 bg-grid opacity-30" />
+            <Aurora colorStops={['#06b6d4', '#3b82f6', '#8b5cf6']} speed={0.8} className="opacity-50" />
             <BackgroundBeams className="opacity-40" />
             <div className="hidden md:block">
                 <FloatingParticles quantity={40} />
@@ -29,7 +33,8 @@ export function HeroSection() {
                 {/* Status Badge */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.5 }}
                     transition={{ duration: 0.5 }}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-midnight-light/60 border border-glass-border mb-8"
                 >
@@ -38,66 +43,60 @@ export function HeroSection() {
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-cyan"></span>
                     </span>
                     <span className="text-sm text-foreground-muted">
-                        ECE ’27 @ SRMIST | Hardware & Systems Engineer
+                        ECE '27 @ SRMIST | Electronics & Communication Engineer
                     </span>
                 </motion.div>
 
                 {/* Name */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false, amount: 0.5 }}
                     transition={{ duration: 0.7, delay: 0.2 }}
                 >
                     <h1 className="heading-xl mb-4 flex flex-col items-center">
                         <span className="text-foreground text-3xl md:text-4xl mb-2 block">Hi, I&apos;m</span>
-                        <RevealText
+                        <DecryptedText
                             text="Justin Jacob Saju"
-                            className="text-gradient justify-center"
-                            delay={0.2}
+                            className="text-gradient"
+                            parentClassName="text-gradient justify-center"
+                            speed={60}
+                            maxIterations={20}
+                            sequential={true}
+                            revealDirection="start"
+                            animateOn="view"
+                            characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890!@#$%"
                         />
                     </h1>
                 </motion.div>
 
                 <motion.div
-                    initial="hidden"
-                    animate="visible"
-                    variants={{
-                        hidden: { opacity: 0 },
-                        visible: {
-                            opacity: 1,
-                            transition: {
-                                staggerChildren: 0.1,
-                                delayChildren: 0.8
-                            }
-                        }
-                    }}
-                    className="mb-6"
-                >
-                    <div className="flex flex-wrap justify-center items-center gap-2 text-lg md:text-xl text-foreground-muted">
-                        <motion.span
-                            variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
-                            className="flex items-center gap-2"
-                        >
-                            <Sparkles className="w-5 h-5 text-accent-cyan" />
-                            Electronics & Communication Engineer
-                        </motion.span>
-                        <motion.span variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="hidden sm:inline text-foreground-dim">•</motion.span>
-                        <motion.span variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }} viewport={{ once: false, amount: 0.3 }}>VLSI & Embedded Systems</motion.span>
-                        <motion.span variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="hidden sm:inline text-foreground-dim">•</motion.span>
-                        <motion.span variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }} viewport={{ once: false, amount: 0.3 }} className="text-accent-blue">IEEE Student Chapter Chair</motion.span>
-                    </div>
-                </motion.div>
-
-                {/* Bio */}
-                <motion.p
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                    className="body-lg text-foreground-muted max-w-2xl mx-auto mb-6"
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: false, amount: 0.5 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="mb-6 flex justify-center items-center gap-2 text-lg md:text-xl"
                 >
-                    Engineer bridging the gap between <span className="text-foreground">hardware architecture</span> and intelligent software.
-                    Specializing in <span className="text-accent-cyan">VLSI Design</span>, <span className="text-accent-blue">Embedded Systems</span>, <span className="text-accent-purple">5G Network Analysis (Wireshark)</span>, <span className="text-accent-green">Thermal Management</span>, and <span className="text-accent-pink">Data Science / AI‑driven optimization</span>.
-                </motion.p>
+                    <Sparkles className="w-5 h-5 text-accent-cyan" />
+                    <RotatingText
+                        texts={[
+                            'EMBEDDED',
+                            'VLSI',
+                            '5G COMMUNICATION',
+                            'DATA SCIENCE',
+                            'AI DRIVEN CODING'
+                        ]}
+                        mainClassName="px-3 py-1 bg-accent-cyan/20 text-accent-cyan border border-accent-cyan/30 overflow-hidden rounded-lg"
+                        staggerFrom="last"
+                        initial={{ y: "100%" }}
+                        animate={{ y: 0 }}
+                        exit={{ y: "-120%" }}
+                        staggerDuration={0.025}
+                        splitLevelClassName="overflow-hidden"
+                        transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                        rotationInterval={2500}
+                    />
+                </motion.div>
 
                 {/* Contact Info Pills */}
                 {/* Contact Info Pills */}
@@ -105,9 +104,10 @@ export function HeroSection() {
                     <motion.a
                         href="mailto:justinsaju21@gmail.com"
                         initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.3 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-midnight-light/40 border border-glass-border text-sm text-foreground-muted hover:text-accent-cyan hover:border-accent-cyan/50 transition-all"
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, amount: 0.5 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="cursor-target inline-flex items-center gap-2 px-4 py-2 rounded-full bg-midnight-light/40 border border-glass-border text-sm text-foreground-muted hover:text-accent-cyan hover:border-accent-cyan/50 transition-all"
                     >
                         <Mail className="w-4 h-4" />
                         justinsaju21@gmail.com
@@ -115,9 +115,9 @@ export function HeroSection() {
                     <motion.span
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                        viewport={{ once: true, amount: 0 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-midnight-light/40 border border-glass-border text-sm text-foreground-muted"
+                        viewport={{ once: false, amount: 0.5 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className="cursor-target inline-flex items-center gap-2 px-4 py-2 rounded-full bg-midnight-light/40 border border-glass-border text-sm text-foreground-muted"
                     >
                         <Phone className="w-4 h-4" />
                         +91 8606884320 / +974 66834157
@@ -128,8 +128,8 @@ export function HeroSection() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0 }}
-                    transition={{ duration: 0.5, delay: 0.8 }}
+                    viewport={{ once: false, amount: 0.5 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
                 >
                     <MagneticButton
@@ -176,6 +176,6 @@ export function HeroSection() {
             <div className="absolute top-1/4 left-10 w-32 h-32 bg-accent-cyan/10 rounded-full blur-3xl" />
             <div className="absolute bottom-1/4 right-10 w-40 h-40 bg-accent-blue/10 rounded-full blur-3xl" />
             <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-accent-purple/10 rounded-full blur-3xl" />
-        </Spotlight>
+        </Spotlight >
     );
 }

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink, Wrench, ChevronRight, Play, ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MovingBorder } from "@/components/ui/MovingBorder";
+import GlitchText from "@/components/ui/GlitchText";
 
 type Category = "all" | "virtual-labs" | "embedded" | "web-apps" | "academic" | "circuits" | "vlsi";
 
@@ -225,7 +226,7 @@ export function ProjectsSection() {
                         Portfolio
                     </span>
                     <h2 className="heading-lg text-foreground mb-4">
-                        Featured <span className="text-gradient">Projects</span>
+                        Featured <GlitchText speed={0.8} enableOnHover={true} className="text-gradient inline-block">Projects</GlitchText>
                     </h2>
                     <motion.p
                         className="body-lg text-foreground-muted max-w-2xl mx-auto"
@@ -253,7 +254,7 @@ export function ProjectsSection() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className={cn(
-                                "px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2",
+                                "cursor-target px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2",
                                 activeCategory === category.id
                                     ? "bg-gradient-to-r from-accent-cyan to-accent-blue text-midnight"
                                     : "bg-midnight-light/60 border border-glass-border text-foreground-muted hover:border-accent-cyan/50"
@@ -299,7 +300,7 @@ export function ProjectsSection() {
                     >
                         <motion.button
                             onClick={handleToggle}
-                            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-glass-border text-foreground-muted hover:text-accent-cyan hover:border-accent-cyan/50 transition-all"
+                            className="cursor-target inline-flex items-center gap-2 px-6 py-3 rounded-full border border-glass-border text-foreground-muted hover:text-accent-cyan hover:border-accent-cyan/50 transition-all"
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                         >

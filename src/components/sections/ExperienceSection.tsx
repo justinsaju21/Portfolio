@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap, Building2, Cpu, BarChart3, Server, Thermometer, ArrowRight, Heart } from "lucide-react";
 import { GlassmorphismCard } from "@/components/ui/GlassmorphismCard";
+import GlitchText from "@/components/ui/GlitchText";
 
 const experiences = [
     {
@@ -117,7 +118,7 @@ export function ExperienceSection() {
                         Experience
                     </span>
                     <h2 className="heading-lg text-foreground mb-4">
-                        Industry <span className="text-gradient">Exposure</span>
+                        Industry <GlitchText speed={0.8} enableOnHover={true} className="text-gradient inline-block">Exposure</GlitchText>
                     </h2>
                     <p className="body-lg text-foreground-muted max-w-2xl mx-auto">
                         Bridging data science and hardware engineering through real-world experience

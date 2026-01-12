@@ -24,7 +24,7 @@ export function GlassmorphismCard({
             viewport={{ once: false, amount: 0.2 }}
             whileHover={hover ? { y: -4, transition: { duration: 0.2 } } : undefined}
             className={cn(
-                "relative overflow-hidden rounded-2xl",
+                "cursor-target relative overflow-hidden rounded-2xl",
                 "bg-midnight/80 md:bg-midnight-light/40 backdrop-blur-xl",
                 "border border-glass-border text-gray-100",
                 "transition-colors duration-300",

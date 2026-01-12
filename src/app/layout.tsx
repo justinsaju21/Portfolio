@@ -4,8 +4,9 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
-import { CustomCursor } from "@/components/ui/CustomCursor";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import TargetCursor from "@/components/ui/TargetCursor";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,7 +47,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground cursor-none relative`}
       >
         <ScrollProgress />
-        <CustomCursor />
+        <TargetCursor />
         <Navbar />
         <main className="relative">{children}</main>
         <Footer />

@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { GraduationCap, Award, Users, Lightbulb, Cpu, Brain, Zap, Briefcase, Code, Radio, Shield, Thermometer } from "lucide-react";
 import { GlassmorphismCard } from "@/components/ui/GlassmorphismCard";
+import GlitchText from "@/components/ui/GlitchText";
 
 const highlights = [
     {
@@ -69,7 +70,7 @@ export function AboutSection() {
                         About Me
                     </span>
                     <h2 className="heading-lg text-foreground mb-4">
-                        Electronics & <span className="text-gradient">Hardware Engineer</span>
+                        Electronics & <GlitchText speed={0.8} enableOnHover={true} className="text-gradient inline-block">Hardware Engineer</GlitchText>
                     </h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-accent-cyan to-accent-blue mx-auto rounded-full" />
                 </motion.div>

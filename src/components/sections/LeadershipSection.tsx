@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Users, Award, Target, TrendingUp, Zap, Globe, Trophy, DollarSign } from "lucide-react";
 import { GlassmorphismCard } from "@/components/ui/GlassmorphismCard";
+import GlitchText from "@/components/ui/GlitchText";
 
 const impacts = [
     {
@@ -142,7 +143,7 @@ export function LeadershipSection() {
                         Leadership
                     </span>
                     <h2 className="heading-lg text-foreground mb-4">
-                        Making an <span className="text-gradient-accent">Impact</span>
+                        Making an <GlitchText speed={0.8} enableOnHover={true} className="text-gradient-accent inline-block">Impact</GlitchText>
                     </h2>
                     <p className="body-lg text-foreground-muted max-w-2xl mx-auto">
                         Driving change through leadership, hackathons, and collaborative initiatives
