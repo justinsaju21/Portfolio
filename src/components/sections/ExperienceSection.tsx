@@ -12,7 +12,7 @@ const experiences = [
         company: "NSYSU University",
         subtitle: "National Sun Yat-sen University",
         location: "Taiwan",
-        period: "2024",
+        period: "Aug 2025 - Jan 2026",
         description: "Successfully passed SoC Testing with all requirements from NSYSU Taiwan. Engaged in specialized research on System-on-Chip (SoC) testing methodologies, focusing on Design for Testability (DFT) and fault coverage optimization.",
         skills: ["SoC Testing", "ATPG", "Scan Chains", "Fault Modeling", "Logic BIST"],
         highlights: [
