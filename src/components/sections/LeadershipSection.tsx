@@ -38,8 +38,8 @@ const impacts = [
 
 const roles = [
     {
-        title: "IEEE Student Chapter Chair",
-        organization: "IEEE - SRMIST",
+        title: "Founder and Chair",
+        organization: "IEEE MTT-S SRM Student Chapter",
         description: "Leading the student chapter to foster technical excellence and innovation. Organizing workshops, hackathons, and technical talks that bridge academia and industry.",
         achievements: [
             "Driving innovation and technical excellence",

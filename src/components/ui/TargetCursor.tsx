@@ -35,12 +35,29 @@ const TargetCursor = ({
 
     useEffect(() => {
         setMounted(true);
-        const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-        const isSmallScreen = window.innerWidth <= 768;
-        const userAgent = navigator.userAgent || navigator.vendor || (window as unknown as { opera?: string }).opera || '';
-        const mobileRegex = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i;
-        const isMobileUserAgent = mobileRegex.test(userAgent.toLowerCase());
-        setIsMobile((hasTouchScreen && isSmallScreen) || isMobileUserAgent);
+
+        // Comprehensive mobile/touch device detection
+        const checkIsMobile = () => {
+            const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            const isSmallScreen = window.innerWidth <= 768;
+            const userAgent = navigator.userAgent || navigator.vendor || (window as unknown as { opera?: string }).opera || '';
+            const mobileRegex = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile|tablet/i;
+            const isMobileUserAgent = mobileRegex.test(userAgent.toLowerCase());
+
+            // Also check for CSS pointer media query
+            const hasCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+            const hasNoHover = window.matchMedia('(hover: none)').matches;
+
+            return (hasTouchScreen && isSmallScreen) || isMobileUserAgent || (hasCoarsePointer && hasNoHover);
+        };
+
+        setIsMobile(checkIsMobile());
+
+        // Listen for resize in case of rotation or desktop mode toggle
+        const handleResize = () => setIsMobile(checkIsMobile());
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     const constants = useMemo(
